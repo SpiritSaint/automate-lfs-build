@@ -4,7 +4,7 @@
 NAME=check
 VERSION=$CHECK_VER
 TARFILE=$NAME-$VERSION.tar.gz
-FETCH_URL="https://github.com/libcheck/check/releases/download/0.12.0/$TARFILE"
+FETCH_URL="https://github.com/libcheck/check/releases/download/$VERSION/$TARFILE"
 
 fetch()
 {
