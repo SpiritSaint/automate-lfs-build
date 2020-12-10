@@ -21,7 +21,7 @@ configure()
     BUILD_PATH=$(pwd)
 
     HELP2MAN=/tools/bin/true ../configure --prefix=/usr \
-        --docdir=/usr/share/doc/flex-2.6.4 >>"$LOGFILE" 2>&1 
+        --docdir=/usr/share/doc/flex-"$VERSION" >>"$LOGFILE" 2>&1 
 }
 
 post_install()
