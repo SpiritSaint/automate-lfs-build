@@ -29,7 +29,7 @@ configure()
     cd "$TMP"/"$NAME"-"$VERSION"
     mkdir build; cd build; BUILD_PATH=$(pwd)
 
-    ../configure --prefix=/usr  --disable-static --docdir=/usr/share/doc/gettext-0.19.8.1 >>"$LOGFILE" 2>&1
+    ../configure --prefix=/usr  --disable-static --docdir=/usr/share/doc/gettext-"$VERSION" >>"$LOGFILE" 2>&1
 }
 
 post_install()
