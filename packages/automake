@@ -20,7 +20,7 @@ configure()
     cd "$TMP"/"$NAME"-"$VERSION"
     mkdir build; cd build; BUILD_PATH=$(pwd)
 
-    ../configure --prefix=/usr --docdir=/usr/share/doc/automake-1.16.1 >>"$LOGFILE" 2>&1
+    ../configure --prefix=/usr --docdir=/usr/share/doc/automake-"$VERSION" >>"$LOGFILE" 2>&1
 }
 
 . "$(dirname "$0")"/../common/common_exec
