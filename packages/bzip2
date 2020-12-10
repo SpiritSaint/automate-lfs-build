@@ -5,7 +5,7 @@ NAME=bzip2
 VERSION=$BZIP_VER
 TARFILE=$NAME-$VERSION.tar.gz
 FETCH_URL="http://anduin.linuxfromscratch.org/LFS/$TARFILE"
-FETCH_PATCH="http://www.linuxfromscratch.org/patches/lfs/10.0/bzip2-1.0.8-install_docs-1.patch"
+FETCH_PATCH="http://www.linuxfromscratch.org/patches/lfs/10.0/bzip2-$VERSION-install_docs-1.patch"
 
 fetch()
 {
@@ -15,7 +15,7 @@ fetch()
         return 1
     fi
 
-    if [ ! -f "${SRCDIR}"/bzip2-1.0.8-install_docs-1.patch ]; then
+    if [ ! -f "${SRCDIR}"/bzip2-"$VERSION"-install_docs-1.patch ]; then
         echo "Patch for bzip2 not available.. Please download it manually from here $FETCH_PATCH and place it inside /lfs-source folder"
         return 1
     fi
@@ -25,7 +25,7 @@ fetch()
 patchup()
 {
     cd "$TMP"/"$NAME"-"$VERSION"
-    patch -Np1 -i "$SRCDIR"/bzip2-1.0.8-install_docs-1.patch >>"$LOGFILE" 2>&1
+    patch -Np1 -i "$SRCDIR"/bzip2-"$VERSION"-install_docs-1.patch >>"$LOGFILE" 2>&1
     [ $? -ne 0 ] && return 1
     sed -i 's@\(ln -s -f \)$(PREFIX)/bin/@\1@' Makefile
     sed -i "s@(PREFIX)/man@(PREFIX)/share/man@g" Makefile
