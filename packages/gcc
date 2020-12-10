@@ -4,7 +4,7 @@
 NAME=gcc
 VERSION=${GCC_VER}
 TARFILE=$NAME-$VERSION.tar.xz
-FETCH_URL="http://ftp.gnu.org/gnu/gcc/gcc-8.2.0/$TARFILE"
+FETCH_URL="http://ftp.gnu.org/gnu/gcc/gcc-$VERSION/$TARFILE"
 
 fetch()
 {
@@ -45,7 +45,7 @@ post_install()
     {
     ln -sv ../usr/bin/cpp /lib; ln -sv gcc /usr/bin/cc
     install -v -dm755 /usr/lib/bfd-plugins
-    ln -sfv ../../libexec/gcc/$(gcc -dumpmachine)/8.2.0/liblto_plugin.so         /usr/lib/bfd-plugins/
+    ln -sfv ../../libexec/gcc/$(gcc -dumpmachine)/"$VERSION"/liblto_plugin.so         /usr/lib/bfd-plugins/
     mkdir -pv /usr/share/gdb/auto-load/usr/lib; mv -v /usr/lib/*gdb.py /usr/share/gdb/auto-load/usr/lib
     } >>"$LOGFILE" 2>&1
 }
