@@ -20,7 +20,7 @@ configure()
     cd "$TMP"/"$NAME"-"$VERSION"
     mkdir build; cd build; BUILD_PATH=$(pwd)
 
-    ../configure --prefix=/usr --docdir=/usr/share/doc/bison-3.3.2 >>"$LOGFILE" 2>&1
+    ../configure --prefix=/usr --docdir=/usr/share/doc/bison-3.7.1 >>"$LOGFILE" 2>&1
 }
 
 . "$(dirname "$0")"/../common/common_exec
