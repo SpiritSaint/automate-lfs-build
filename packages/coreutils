@@ -5,7 +5,7 @@ NAME=coreutils
 VERSION=$COREUTILS_VER
 TARFILE=$NAME-$VERSION.tar.xz
 FETCH_URL="http://ftp.gnu.org/gnu/coreutils/$TARFILE"
-FETCH_PATCH="http://www.linuxfromscratch.org/patches/lfs/8.4/coreutils-8.30-i18n-1.patch"
+FETCH_PATCH="http://www.linuxfromscratch.org/patches/lfs/10.0/coreutils-$VERSION-i18n-1.patch"
 
 fetch()
 {
@@ -24,7 +24,7 @@ fetch()
 patchup()
 {
     cd "$TMP"/"$NAME"-"$VERSION"
-    patch -Nfp1 -i "$SRCDIR"/coreutils-8.30-i18n-1.patch >>"$LOGFILE" 2>&1
+    patch -Nfp1 -i "$SRCDIR"/coreutils-"$VERSION"-i18n-1.patch >>"$LOGFILE" 2>&1
 }
 
 pre_configure()
