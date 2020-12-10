@@ -26,7 +26,7 @@ configure()
     cd "$TMP"/"$NAME"-"$VERSION"
     mkdir build; cd build; BUILD_PATH=$(pwd)
 
-    ../configure --prefix=/usr --disable-static --docdir=/usr/share/doc/expat-2.2.6 >>"$LOGFILE" 2>&1
+    ../configure --prefix=/usr --disable-static --docdir=/usr/share/doc/expat-"$VERSION" >>"$LOGFILE" 2>&1
 }
 
 . "$(dirname "$0")"/../common/common_exec
